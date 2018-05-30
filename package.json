@@ -1,0 +1,23 @@
+{
+  "name": "express-fullcrud-harrypotter-homework",
+  "version": "1.0.0",
+  "description": "![:image](https://media.giphy.com/media/mDh73MB4yiUEw/giphy.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:erylmurphy9/express-fullCRUD-harrypotter-homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "pg-monitor": "^1.0.0",
+    "pg-promise": "^8.4.4"
+  }
+}

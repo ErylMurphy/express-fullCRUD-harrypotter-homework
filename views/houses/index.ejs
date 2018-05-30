@@ -1,0 +1,7 @@
+<% include ../partials/header.ejs %>
+  <% houses.forEach(houses => { %>
+    <h2><%= houses.name %></h2>
+    <p><img src="<%= houses.img_url %>"></p>
+  <% }); %>
+
+<% include ../partials/footer.ejs %>
