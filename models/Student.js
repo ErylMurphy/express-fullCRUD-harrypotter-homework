@@ -23,5 +23,9 @@ Student.create = newStudent => {
     );
 };
 
+Student.delete = id => {
+    return db.result("DELETE FROM students WHERE student_id = ${id}", { id: id });
+};
+
 
 module.exports = Student;

@@ -4,10 +4,13 @@ const pg = require('pg');
 const bodyParser = require("body-parser");
 const Student = require('./models/Student');
 const House = require('./models/House');
+const methodOverride = require("method-override");
+
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+app.use(methodOverride("_method"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -46,6 +49,14 @@ app.post('/students/new', (request, response) => {
         Student.create(newStudent),
     ]).then(students=> {
             response.redirect('/students');
+        });
+});
+
+app.delete("/students/:id", (request, response) => {
+    const id = request.params.id;
+    Student.delete(id)
+        .then(student => {
+            response.redirect("..");
         });
 });
 

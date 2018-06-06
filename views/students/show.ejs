@@ -1,4 +1,8 @@
 <% include ../partials/header.ejs %>
   <h2><%= student.fname %> <%= student.lname %></h2>
     <p><img src="<%= student.image %>"></p>
+
+    <form method="POST" action="/students/<%= student.student_id %>?_method=DELETE" class="delete-form">
+      <button type="submit" class="delete-button">Delete</button>
+    </form>
 <% include ../partials/header.ejs %>
