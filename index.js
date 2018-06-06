@@ -26,6 +26,11 @@ app.get('/students', (request, response) => {
         })
 });
 
+app.get('/students/new', (request, response) => {
+    House.all().then(houses => {
+        response.render('students/new', { houses: houses });
+    });
+});
 app.get('/students/:id', (request, response) => {
     const student_id = request.params.id;
     Student.find(student_id)
@@ -33,6 +38,16 @@ app.get('/students/:id', (request, response) => {
     response.render('students/show', {student: student});
     })
 });
+
+
+
+// app.post('/students', (request, response) => {
+//     const newStudent = request.body;
+//         Student.create(newStudent)
+//         .then(([students, state, id]) => {
+//             response.render('students/index');
+//         })
+// })
 
 app.get('/houses', (request, response) => {
     House.all()

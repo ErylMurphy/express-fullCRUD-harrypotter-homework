@@ -15,4 +15,13 @@ Student.allInHouse = house_id => {
         house_id: house_id
     });
 };
+
+Student.create = newStudent => {
+    return db.one(
+        "INSERT INTO students (fname, lname, image, house_id) VALUES (${fname}, ${lname}, ${image}, ${house_id}) RETURNING *",
+        newStudent
+    );
+};
+
+
 module.exports = Student;
