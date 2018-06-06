@@ -39,15 +39,15 @@ app.get('/students/:id', (request, response) => {
     })
 });
 
-
-
-// app.post('/students', (request, response) => {
-//     const newStudent = request.body;
-//         Student.create(newStudent)
-//         .then(([students, state, id]) => {
-//             response.render('students/index');
-//         })
-// })
+app.post('/students/new', (request, response) => {
+    const newStudent = request.body;
+    newStudent.id = request.params.id;
+    Promise.all([
+        Student.create(newStudent),
+    ]).then(students=> {
+            response.redirect('/students');
+        });
+});
 
 app.get('/houses', (request, response) => {
     House.all()
