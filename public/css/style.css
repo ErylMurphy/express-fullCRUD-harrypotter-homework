@@ -1,52 +1,44 @@
-@import url("http://fnt.webink.com/wfs/webink.css/?project=548D2AB5-FEF2-4BB9-BA39-A9506DCC5723&fonts=81DCB682-CEF0-F2EE-50B4-29BCB883721E:f=Ablefont");
-@import url(http://fonts.googleapis.com/css?family=Irish+Grover);
-
-
-body {
-  font-family: Ablefont, Irish Grover;
-  text-align: center;
-  font-color: #7C2A30;
-}
-
-nav {
-  padding: 15px;
-  background-color: #D8AE48;
-  border-radius: 40px 0 40px 0;
-}
-
 h1 {
-  font-size: 36px;
+    padding: 20px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 h2 {
-  font-size: 22px;
+    display: flex;
+    justify-content: center;
 }
 
-.student {
-  display: inline-block;
-  background-color: #D8AE48;
-  width: 350px;
-  text-align: center;
-  margin: 10px;
-  padding: 10px;
-  border: 10px solid black;
-  border-radius: 10%;
+a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
 }
 
-.house {
-  display: inline-block;
+a:hover {
+    color: purple;
 }
 
-.house img {
-  display: block;
+.index-page-container, body {
+    background-image: url('https://i.pinimg.com/originals/a9/f8/be/a9f8beb1653530b5516e31a286191e2b.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
 }
 
-img {
-  border-radius: 40%;
-  height: 300px;
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
 }
 
-.roster{
-  width: 100%;
-  margin: 0 auto;
+.index-page-container {
+    font-size: 20px;
 }

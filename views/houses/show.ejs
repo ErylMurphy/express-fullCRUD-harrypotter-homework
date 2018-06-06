@@ -1,4 +1,9 @@
-<% include ../partials/header.ejs %>
+<!doctype html>
+<html>
+
+<head>
+  <% include ../partials/header %>
+</head>
   <h2><%= house.name %></h2>
     <p><img src="<%= house.img_url %>"></p>
      <% students.forEach(student => { %>
@@ -6,4 +11,9 @@
     <p><img src="<%= student.image %>"></p>
   <% }); %>
 
-<% include ../partials/footer.ejs %>
+</body>
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</html>

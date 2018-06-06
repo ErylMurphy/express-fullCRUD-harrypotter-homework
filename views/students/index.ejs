@@ -1,4 +1,11 @@
-<% include ../partials/header.ejs %>
+<!doctype html>
+<html>
+
+<head>
+  <% include ../partials/header %>
+</head>
+
+<body>
 <a href = "students/new">Add a student</a>
   <% students.forEach(students => { %>
     <h2><%= students.fname %> <%= students.lname %></h2>
@@ -7,4 +14,9 @@
   
   <% }); %>
 
-<% include ../partials/footer.ejs %>
+</body>
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</html>

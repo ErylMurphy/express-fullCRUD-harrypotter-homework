@@ -1,9 +1,21 @@
-<% include ../partials/header.ejs %>
+<!doctype html>
+<html>
+
+<head>
+  <% include ../partials/header %>
+</head>
+
+<body>
+
   <% houses.forEach(houses => { %>
     <h2><%= houses.name %></h2>
     <a href="/houses/<%= houses.id %>">
  <img src="<%= houses.img_url %>">
 </a>
   <% }); %>
+</body>
+<footer>
+  <% include ../partials/footer %>
+</footer>
 
-<% include ../partials/footer.ejs %>
+</html>
