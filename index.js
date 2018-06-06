@@ -17,11 +17,6 @@ app.get("/", (request, response) => {
     response.render("home/index");
 });
 
-
-app.get('/', (request, response) => {
-    response.render("students/index");
-});
-
 app.get('/students', (request, response) => {
     Student.all()
         .then(students => {
@@ -32,12 +27,10 @@ app.get('/students', (request, response) => {
 });
 
 app.get('/students/:id', (request, response) => {
-    const id = Number(request.params.id);
-    Student.find(id)
+    const student_id = request.params.id;
+    Student.find(student_id)
     .then(student => {
-    const templateData = {};
-    templateData.student = student;
-    response.render('students/show', templateData);
+    response.render('students/show', {student: student});
     })
 });
 
@@ -50,22 +43,17 @@ app.get('/houses', (request, response) => {
         })
 });
 
-app.get('/houses', (request, reponse) => {
-    response.render('/houses');
-})
-
 app.get('/houses/:id', (request, response) => {
-    const id = Number(request.params.id);
-    House.find(id)
-        .then(house => {
-            const templateData = {};
-            templateData.house = house;
-        }).then(students => {
-            const templateData = {};
-            templateData.student = student;
-        })
-    response.render('houses/show', templateData);
+    const house_id = request.params.id;
+    Promise.all([
+        Student.allInHouse(house_id),
+        House.find(house_id),
+    ]).then(([students, house]) => {
+            response.render("houses/show", {students: students, house: house});
+        });
 });
+
+
 
 app.listen(PORT, () => {
     console.log(`Express web server listening on port ${PORT}`);

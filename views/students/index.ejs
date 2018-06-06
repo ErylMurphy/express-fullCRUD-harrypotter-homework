@@ -1,8 +1,8 @@
 <% include ../partials/header.ejs %>
   <% students.forEach(students => { %>
     <h2><%= students.fname %> <%= students.lname %></h2>
-    <p><img src="<%= students.image %>"></p>
-    <p><%= students.house_id %> 
+    <a href = "/students/<%=students.student_id %>"><img src="<%= students.image %>"></a>
+   <p><%= students.house_id %> </p>
   <% }); %>
 
 <% include ../partials/footer.ejs %>

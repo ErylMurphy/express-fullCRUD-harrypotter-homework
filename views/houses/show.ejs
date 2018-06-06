@@ -1,9 +1,9 @@
 <% include ../partials/header.ejs %>
   <h2><%= house.name %></h2>
     <p><img src="<%= house.img_url %>"></p>
-     <% students.forEach(students => { %>
-    <h2><%= students.fname %> <%= students.lname %></h2>
-    <p><img src="<%= students.image %>"></p>
+     <% students.forEach(student => { %>
+    <h2><%= student.fname %> <%= student.lname %></h2>
+    <p><img src="<%= student.image %>"></p>
   <% }); %>
 
 <% include ../partials/footer.ejs %>
